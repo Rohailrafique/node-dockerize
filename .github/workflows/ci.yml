@@ -16,11 +16,11 @@ jobs:
         run: |
           docker build -t node-image .
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
+      #   deploy:
+      #     runs-on: ubuntu-latest
+      #     needs: build
 
-    steps:
+      #     steps:
       - name: Docker Tag
         run: |
           docker tag node-image brunofernandes95/node-image:latest
