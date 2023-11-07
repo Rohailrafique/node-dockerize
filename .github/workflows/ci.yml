@@ -17,6 +17,20 @@ jobs:
         run: |
           docker build -t node-image .
 
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: DockerHub Login
+        env:
+          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+      # env:
+      #     SUPER_SECRET: ${{ secrets.SuperSecret }}
+
     #   - name: Build
     #     run: |
     #       # Add your build commands here
