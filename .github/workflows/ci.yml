@@ -29,7 +29,7 @@ jobs:
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Docker Push
         run: |
-          docker push
+          docker push brunofernandes95/node-repo:node-image
 
       # env:
       #     SUPER_SECRET: ${{ secrets.SuperSecret }}
