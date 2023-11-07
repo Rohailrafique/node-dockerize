@@ -23,7 +23,7 @@ jobs:
       #     steps:
       - name: Docker Tag
         run: |
-          docker tag node-image brunofernandes95/node-image:latest
+          docker tag node-image brunofernandes95/node-repo/node-image:latest
       - name: DockerHub Login
         env:
           DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
@@ -32,4 +32,4 @@ jobs:
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Docker Push
         run: |
-          docker push -a brunofernandes95/node-repo:node-image
+          docker push -a brunofernandes95/node-repo/node-image
